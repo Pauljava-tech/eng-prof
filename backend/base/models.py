@@ -14,6 +14,8 @@ class Application(models.Model):
         ('female', 'Female')
     ]
     sex = models.CharField(max_length=10, choices=SEX_CHOICES, help_text='Choose')
+    email = models.EmailField()
+    matric_number = models.IntegerField()
     
     department = models.CharField(max_length=100)
     course_of_study = models.CharField(max_length=100)
