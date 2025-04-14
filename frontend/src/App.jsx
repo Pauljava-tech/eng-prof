@@ -43,7 +43,8 @@ function App() {
     <div className='bg-cover bg-no-repeat bg-center h-screen overflow-hidden group relative' style={{ backgroundImage: `url(${backgroundImage})` }}> 
      <div className='bg-white h-full w-2/3 absolute left-1/3 opacity-90 overflow-y-scroll p-11'>
         <h1 className='font-heading text-center font-bold '>FORM</h1>
-        {formElements.map((element,index) => (
+      <form onSubmit={(e) => {submitData(e)}} >
+      {formElements.map((element,index) => (
           element.option? <div>
           <label htmlFor={element.name} className='text-[16px] font-semibold m-2'>{element.label}</label><br/>
           <select name={element.name} id={element.name} className='w-[60%] my-2 rounded-2xl p-2 h-10 border-2 border-gray-400'>
@@ -56,6 +57,8 @@ function App() {
       </div>
           
         ))}
+        <button type="submit" className='text-xl text-white my-5 ml-7 bg-red-700 hover:bg-black hover:text-white p-4 w-[30%] rounded-2xl m-auto '>Submit</button>
+      </form>
      </div>
     </div>
   )
