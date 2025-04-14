@@ -21,6 +21,27 @@ function App() {
     remita_receipt: null
   })
 
+  function submitData(e){
+    e.preventDefault();
+    const formDatao = new FormData(e.target);
+    const first_name = formDatao.get("first_name")
+    const last_name = formDatao.get("last_name")
+    const middle_name = formDatao.get("middle_name")
+    const sex = formDatao.get("sex")
+    const email = formDatao.get("email")
+    const matric_number = formDatao.get("matric_number")
+    const department = formDatao.get("department")
+    const course_of_study = formDatao.get("course_of_study")
+    const year_of_graduation = formDatao.get("year_of_graduation")
+    const class_of_degree = formDatao.get("class_of_degree")
+    const degree_awarded = formDatao.get("degree_awarded")
+    const recipient_address = formDatao.get("recipient_address")
+    const remita_reference_number = formDatao.get("remita_reference_number")
+    const certificate_upload = formDatao.get("certificate_upload")
+    const remita_receipt = formDatao.get("remita_receipt")
+    console.log(remita_receipt)
+  }
+
   const formElements = [
     { label: "First name", name: "first_name", type:"text" },
         { label: "Last name", name: "last_name", type:"text" },
@@ -57,7 +78,7 @@ function App() {
       </div>
           
         ))}
-        <button type="submit" className='text-xl text-white my-5 ml-7 bg-red-700 hover:bg-black hover:text-white p-4 w-[30%] rounded-2xl m-auto '>Submit</button>
+        <button type="submit" className='text-xl text-white my-5 ml-5 bg-gray-900 hover:bg-black hover:text-white p-4 w-[30%] rounded-2xl m-auto '>Submit</button>
       </form>
      </div>
     </div>
