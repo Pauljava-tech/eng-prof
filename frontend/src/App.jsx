@@ -39,7 +39,6 @@ function App() {
     const remita_reference_number = formDatao.get("remita_reference_number")
     const certificate_upload = formDatao.get("certificate_upload")
     const remita_receipt = formDatao.get("remita_receipt")
-    console.log(remita_receipt)
   }
 
   const formElements = [
