@@ -2,6 +2,7 @@ import backgroundImage from './assets/pexels-souvenirpixels-417074.jpg'
 import './assets/index.css'
 import { useState } from 'react'
 import { Toaster, toast } from 'sonner';
+import { Outlet, Link } from "react-router-dom";
 function App() {
 
   const [formData, setFormData] = useState({
@@ -60,7 +61,7 @@ function App() {
   }
 
   const formElements = [
-    { label: "First name", name: "first_name", type:"text" },
+        { label: "First name", name: "first_name", type:"text" },
         { label: "Last name", name: "last_name", type:"text" },
         { label: "Middle name", name: "middle_name", type:"text" },
         { label: "Sex", name: "sex", option:["male","female"] },
@@ -80,6 +81,9 @@ function App() {
   return (
     <div className='bg-cover bg-no-repeat bg-center h-screen overflow-hidden group relative' style={{ backgroundImage: `url(${backgroundImage})` }}> 
      <div className='bg-white h-full w-[100vw] absolute left-0 md:w-2/3 md:left-1/3 opacity-90 overflow-y-scroll p-11'>
+     <button className='bg-red-500 rounded-xl p-3'>
+      <Link to="/admin">Admin</Link>
+     </button>
         <h1 className='font-heading text-center font-bold '>FORM</h1>
         <Toaster richColors position='top-right'/>
       <form onSubmit={(e) => {submitData(e)}} >
