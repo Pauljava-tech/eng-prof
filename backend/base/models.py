@@ -53,6 +53,18 @@ class Application(models.Model):
         help_text='Select mode of collection'
     )
     
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('approved', 'Approved'),
+        ('rejected', 'Rejected')
+    ]
+    status = models.CharField(
+        max_length=10,
+        choices=STATUS_CHOICES,
+        default='pending',
+        help_text='Application status (admin only)'
+    )
+    
     recipient_address = models.TextField()
     remita_reference_number = models.CharField(max_length=12)
     
